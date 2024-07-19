@@ -1,0 +1,42 @@
+cmake-format --version
+0.6.13
+
+clang-tidy --version
+Ubuntu LLVM version 14.0.0
+Optimized build.
+Default target: x86_64-pc-linux-gnu
+Host CPU: znver2
+
+clang-format --version
+Ubuntu clang-format version 14.0.0-1ubuntu1.1
+
+clang --version
+Ubuntu clang version 14.0.0-1ubuntu1.1
+Target: x86_64-pc-linux-gnu
+Thread model: posix
+InstalledDir: /usr/bin
+
+cmake --version
+cmake version 3.22.1
+
+CMake suite maintained and supported by Kitware (kitware.com/cmake).
+
+make --version
+GNU Make 4.3
+Built for x86_64-pc-linux-gnu
+Copyright (C) 1988-2020 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+python3 --version
+Python 3.10.12
+
+codespell --version
+2.3.0
+
+lcov --version
+lcov: LCOV version 1.14
+
+pre-commit --version
+pre-commit 3.7.0

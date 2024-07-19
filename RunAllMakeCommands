@@ -1,0 +1,54 @@
+#!/usr/bin/bash
+
+# Should pass
+set -e
+make clean all && make build gcd release
+make clean all && make build gcd
+make clean all && make build primetest
+make clean all && make build primetest release
+make clean all && make build all release
+make clean all && make build all
+
+make test gcd release
+make test gcd
+make test test_isprime release
+make test all release
+make tidy
+make format
+make check
+echo "Should PASS tested finished!"
+
+# Should fail
+set +e # Disable exit on error to handle the failures gracefully
+make test test_isprime
+if [ $? -eq 0 ]; then
+  echo "Unexpected success in 'make test test_isprime'"
+  exit 1
+fi
+
+make test all
+if [ $? -eq 0 ]; then
+  echo "Unexpected success in 'make test all'"
+  exit 1
+fi
+
+make sanitize
+if [ $? -eq 0 ]; then
+  echo "Unexpected success in 'make sanitize'"
+  exit 1
+fi
+
+make coverage
+if [ $? -eq 0 ]; then
+  echo "Unexpected success in 'make coverage'"
+  exit 1
+fi
+
+echo "Should FAIL tested finish"
+
+# Should pass
+make tree dir . 1
+make tree file source 2
+make tree file source
+make tree dir source
+echo "All TESTS COMPLETED!"

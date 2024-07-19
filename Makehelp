@@ -1,0 +1,91 @@
+Available targets:
+  format         Format all source and CMake files using clang-format and cmake-format.
+                 Usage: make format
+                 This command will search for all .c, .h, .cpp, and .cmake files and format them.
+                 The clang-format command will format the C/C++ source files.
+                 The cmake-format command will format the CMake files.
+
+  tidy           Run clang-tidy on all source files to check for code quality issues.
+                 Usage: make tidy
+                 This command will run clang-tidy on all source files, ensuring adherence to
+                 coding standards and detecting potential code issues.
+                 It uses the .clang-tidy configuration file for settings.
+
+  check          Run cppcheck on the source files for static code analysis.
+                 Usage: make check
+                 This command will use cppcheck to perform static analysis on the source files,
+                 identifying potential bugs, code style issues, and other problems.
+
+  repeat         Display the parsed arguments for debugging purposes.
+                 Usage: make repeat
+                 This command will print out the parsed arguments to help debug the Makefile.
+                 It shows ARGUMENTS, FIRST_ARGUMENT, SECOND_ARGUMENT, and EXTRA_ARGS.
+
+  build          Build the specified executable or all executables.
+                 Usage: make build <executable_name> [release|dev] -- <other build args...>
+                 This command builds the specified executable.
+                 Use 'all' to build all binaries.
+                 If 'release' is specified, the build will be optimized for release.
+                 If 'dev' is specified, the build will be set up for development.
+                 Example: make build my_executable release
+
+  clean          Clean the build directories.
+                 Usage: make clean [release|all]
+                 This command removes the build directories.
+                 If 'release' is specified, only the release build directory will be cleaned.
+                 If 'all' is specified, all build directories will be cleaned.
+                 Example: make clean release
+
+  test           Build and run tests for the specified executable.
+                 Usage: make test <executable_name> [release|dev]
+                 This command builds and runs tests for the specified executable.
+                 Use 'all' to test all binaries.
+                 If 'release' is specified, tests will be run in the release configuration.
+                 Example: make test my_executable release
+
+  sanitize       Build the project with sanitizers enabled and run tests.
+                 Usage: make sanitize
+                 This command builds the project with various sanitizers (e.g., address, undefined behavior)
+                 enabled to catch runtime errors, and then runs the tests.
+
+  coverage       Build the project with code coverage analysis enabled and run tests.
+                 Usage: make coverage
+                 This command builds the project with coverage analysis enabled.
+                 It collects coverage data while running the tests and generates a coverage report.
+
+  tree           Display the directory structure up to a specified depth.
+                 Usage: make tree <dir|file> <directory-name> [level]
+                 This command prints the directory structure of the specified directory.
+                 If 'dir' is specified, it shows directories only.
+                 If 'file' is specified, it shows both files and directories.
+                 The optional 'level' specifies the depth of the directory tree to display.
+                 Example: make tree dir src 2
+
+  docs           Build the project documentation using Doxygen and m.css.
+                 Usage: make docs
+                 This command generates the project documentation.
+                 It configures and runs Doxygen to extract documentation from the source code,
+                 and uses m.css for formatting the output.
+                 The generated documentation will be placed in the build/docs directory.
+
+Common variables used:
+  ROOT_DIR               The root directory of the project.
+  SRC_DIR                The source directory of the project.
+  CMAKE_DIR              The directory containing CMake files.
+  BIN_DIR                The directory containing binaries.
+  BUILD_DIR              The directory where builds are performed.
+  TEST_DIR               The directory containing tests.
+  ARGUMENTS              The arguments passed to the Makefile.
+  EXECUTABLE             The name of the executable to build or run.
+  FIRST_ARGUMENT         The first argument from the ARGUMENTS list.
+  SECOND_ARGUMENT        The second argument from the ARGUMENTS list.
+  THIRD_ARGUMENT         The third argument from the ARGUMENTS list.
+  EXTRA_ARGS_INDEX       The index of extra arguments.
+  EXTRA_ARGS             The extra arguments passed to the Makefile.
+  SOURCE_FILES           The list of source files.
+  BINARIES               The list of binaries found in the BIN_DIR.
+  CMAKE_FILES            The list of CMake files found in the project.
+
+Notes:
+- Ensure clang-format, cmake-format, clang-tidy, cppcheck, and Doxygen are installed and accessible in your PATH.
+- Use 'make help' to display this help message.

@@ -1,0 +1,20 @@
+{
+    "configurations": [
+      {
+        "name": "Linux",
+        "includePath": [
+          "${fileDirname}/../**",
+          "${fileDirname}/../source/libs/PrimalityUtilities",
+          "${fileDirname}/../source/libs/GCDUtilities",
+          "${fileDirname}/../source/libs/VectorUtilities"
+        ],
+        "defines": ["_DEBUG", "UNICODE", "_UNICODE"],
+        "windowsSdkVersion": "10.0.18362.0",
+        "compilerPath": "/usr/bin/clang",
+        "cStandard": "c11",
+        "cppStandard": "c++17",
+        "intelliSenseMode": "windows-msvc-x86"
+      }
+    ],
+    "version": 4
+  }
